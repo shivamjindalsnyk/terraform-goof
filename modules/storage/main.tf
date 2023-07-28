@@ -93,7 +93,7 @@ resource "aws_ssm_parameter" "snyk_ssm_db_name" {
   name        = "/snyk-${var.environment}/DB_NAME"
   description = "Snyk Database Name"
   type        = "SecureString"
-  value       = aws_db_instance.snyk_db.name
+  value       = aws_db_instance.snyk_db.db_name
 
   tags = merge(var.default_tags, {
     environment = "${var.environment}"
